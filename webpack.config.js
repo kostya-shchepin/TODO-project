@@ -15,6 +15,8 @@ module.exports = {
                 test: /\.css$/, // Регулярное выражение для обработки файлов с расширением .css
                 use: ["style-loader", "css-loader"], // Загрузчики, используемые для обработки CSS-файлов
             },
+            { test: /\.less$/, use: ["style-loader", "css-loader", "less-loader"] },
+            { test: /\.(js)$/, use: "babel-loader" },
         ],
     },
 
