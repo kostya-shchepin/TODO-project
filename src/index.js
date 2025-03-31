@@ -1,12 +1,14 @@
-document.querySelector(".delete-task").addEventListener("click", function () {
-    this.parentElement.remove();
+document.querySelectorAll(".delete-task").forEach((button) => {
+    button.addEventListener("click", (event) => {
+        event.target.parentElement.remove();
+    });
 });
 
 document.querySelector(".add-task").addEventListener("click", function () {
     document
-        .querySelector(".task")
-        .lastElementChild.insertAdjacentHTML(
-            "afterEnd",
-            '<div id="task"><input type="checkbox" id="task-checkbox" />Дело №2 <button id="delete-task">Удалить</button></div><br />'
+        .querySelector(".task-block")
+        .insertAdjacentHTML(
+            "afterend",
+            '<div class="task"><input type="checkbox" class="task-checkbox" /><p>Дело №2</p><button class="delete-task">Удалить</button></div>'
         );
 });
