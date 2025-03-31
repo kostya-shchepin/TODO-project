@@ -1,8 +1,12 @@
-function addNumbers() {
-    const num1 = parseFloat(document.getElementById("number1").value);
-    const num2 = parseFloat(document.getElementById("number2").value);
-    const result = num1 + num2;
-    document.getElementById("result").innerText = `Result: ${result}`;
-}
+document.getElementById("delete-task").addEventListener("click", function () {
+    document.getElementById("delete-task").parentElement.remove();
+});
 
-document.getElementById("calculate").addEventListener("click", addNumbers);
+document.getElementById("add-task").addEventListener("click", function () {
+    document
+        .querySelector("#task")
+        .lastElementChild.insertAdjacentHTML(
+            "afterEnd",
+            '<div id="task"><input type="checkbox" id="task-checkbox" />Дело №2 <button id="delete-task">Удалить</button></div><br />'
+        );
+});
