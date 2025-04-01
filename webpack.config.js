@@ -1,5 +1,6 @@
 const path = require("path"); // Импортируем модуль "path" для работы с путями файлов
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
     entry: "./src/index.js", // Точка входа для сборки проекта
@@ -11,11 +12,7 @@ module.exports = {
 
     module: {
         rules: [
-            {
-                test: /\.css$/, // Регулярное выражение для обработки файлов с расширением .css
-                use: ["style-loader", "css-loader"], // Загрузчики, используемые для обработки CSS-файлов
-            },
-            { test: /\.less$/, use: ["style-loader", "css-loader", "less-loader"] },
+            { test: /\.(less|css)$/, exclude: /src/, use: [MiniCssExtractPlugin.loader, "style-loader", "css-loader", "less-loader"] },
             { test: /\.(js)$/, use: "babel-loader" },
         ],
     },
@@ -24,6 +21,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: "./src/index.html",
         }),
+        new MiniCssExtractPlugin({ filename: "[name].css" }),
     ],
 
     devServer: {
