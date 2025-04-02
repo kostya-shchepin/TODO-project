@@ -1,8 +1,80 @@
-.task-block {
-    display: flex;
-    flex-direction: column;
-    .task {
+body {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+}
+button {
+    cursor: pointer;
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+.block {
+    padding: 40px;
+    h2 {
+        font-size: 60px;
+        font-weight: 700;
+    }
+    .task-block {
         display: flex;
-        gap: 40px;
+        flex-direction: column;
+        gap: 20px;
+        .task {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            p {
+                font-size: 36px;
+                font-weight: 400;
+            }
+            .delete-task {
+                width: 60px;
+                height: 60px;
+                background-color: #fa4141;
+                border: 0;
+                border-radius: 10px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+                &::before {
+                    content: "";
+                    width: 36px;
+                    height: 4px;
+                    background-color: #fff;
+                    position: absolute;
+                }
+                //     .minus {
+                //         width: 36px;
+                //         height: 4px;
+                //         background-color: #fff;
+                //     }
+            }
+        }
+    }
+    .add-task {
+        width: 170px;
+        height: 60px;
+        background-color: #2fbf55;
+        border: 0;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        &::after {
+            content: "";
+            width: 36px;
+            height: 4px;
+            background-color: #fff;
+            position: absolute;
+        }
+        &::before {
+            content: "";
+            width: 4px;
+            height: 36px;
+            background-color: #fff;
+            position: absolute;
+        }
     }
 }
