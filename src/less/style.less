@@ -1,6 +1,7 @@
 body {
     font-family: "Open Sans", sans-serif;
     font-weight: 400;
+    background-color: rgb(242, 242, 242);
 }
 button {
     cursor: pointer;
@@ -10,8 +11,16 @@ button {
 }
 .block {
     padding: 40px;
+    margin: 100px auto 0;
+    display: block;
+    width: fit-content;
+    background-color: #fff;
+    border-radius: 30px;
+    box-shadow: 4px 15px 31px 2px rgba(120, 129, 135, 0.2);
     h2 {
-        font-size: 60px;
+        margin: 0;
+        margin-bottom: 30px;
+        font-size: 48px;
         font-weight: 700;
     }
     .task-block {
@@ -21,14 +30,47 @@ button {
         .task {
             display: flex;
             align-items: center;
-            gap: 40px;
-            p {
-                font-size: 36px;
-                font-weight: 400;
+            gap: 30px;
+            font-size: 24px;
+            font-weight: 400;
+            .task-checkbox {
+                appearance: none;
+                position: relative;
+                width: 40px;
+                height: 40px;
+                // background-color: #000;
+                border-radius: 10px;
+                border: 4px solid #03abff;
+                transition: 500ms;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                &::after {
+                    content: "";
+                    position: absolute;
+                    width: 0px;
+                    height: 0px;
+                    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='42' height='34' viewBox='0 0 42 34' fill='none'%3e%3cpath d='M16.6415 34L0 16.6047L2.37736 13.4419L15.8491 22.9302L38.8302 0L42 3.16279L16.6415 34Z' fill='black'/%3e%3c/svg%3e");
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    // transition: 500ms;
+                }
+                &:checked {
+                    & + span {
+                        text-decoration: line-through;
+                    }
+                    &::after {
+                        width: 30px;
+                        height: 24px;
+                        text-decoration: line-through;
+                        // transition: 500ms;
+                    }
+                }
             }
             .delete-task {
-                width: 60px;
-                height: 60px;
+                width: 40px;
+                height: 40px;
                 background-color: #fa4141;
                 border: 0;
                 border-radius: 10px;
@@ -38,22 +80,18 @@ button {
                 position: relative;
                 &::before {
                     content: "";
-                    width: 36px;
-                    height: 4px;
+                    width: 25px;
+                    height: 3px;
                     background-color: #fff;
                     position: absolute;
                 }
-                //     .minus {
-                //         width: 36px;
-                //         height: 4px;
-                //         background-color: #fff;
-                //     }
             }
         }
     }
     .add-task {
-        width: 170px;
-        height: 60px;
+        margin-top: 40px;
+        width: 120px;
+        height: 40px;
         background-color: #2fbf55;
         border: 0;
         border-radius: 10px;
@@ -63,15 +101,15 @@ button {
         position: relative;
         &::after {
             content: "";
-            width: 36px;
-            height: 4px;
+            width: 25px;
+            height: 3px;
             background-color: #fff;
             position: absolute;
         }
         &::before {
             content: "";
-            width: 4px;
-            height: 36px;
+            width: 3px;
+            height: 25px;
             background-color: #fff;
             position: absolute;
         }
