@@ -1,28 +1,31 @@
 <!DOCTYPE html>
 <html lang="ru">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Список дел</title>
-    </head>
-    <body>
-        <div class="task-block">
-            <div class="task">
-                <input type="checkbox" class="task-checkbox" />
-                <p>Дело №1</p>
-                <button class="delete-task">Удалить</button>
-            </div>
-            <div class="task">
-                <input type="checkbox" class="task-checkbox" />
-                <p>Дело №2</p>
-                <button class="delete-task">Удалить</button>
-            </div>
-            <div class="task">
-                <input type="checkbox" class="task-checkbox" />
-                <p>Дело №2</p>
-                <button class="delete-task">Удалить</button>
-            </div>
-        </div>
-        <button class="add-task">Добавить</button>
-    </body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+			rel="stylesheet"
+		/>
+		<title>Список дел</title>
+	</head>
+	<body>
+		<div class="block">
+			<h2>Список дел</h2>
+			<div class="task-block"></div>
+			<button class="add-task"><div class="plus"></div></button>
+		</div>
+		<div class="popup__bg">
+			<div class="popup">
+				<div class="close-popup">+</div>
+				<label>
+					<input type="text" name="name" class="task-input" />
+					<div class="label__text">Введите дело</div>
+				</label>
+				<button type="submit">Добавить</button>
+			</div>
+		</div>
+	</body>
 </html>
